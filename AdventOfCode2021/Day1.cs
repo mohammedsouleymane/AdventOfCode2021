@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 namespace AdventOfCode2021
 {
-    class Oefening1
+    class Day1
     {
        public static void One()
         {

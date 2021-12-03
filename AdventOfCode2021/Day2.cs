@@ -8,16 +8,14 @@ namespace AdventOfCode2021
 {
     internal class Day2
     {
-
+        private static string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent + "/Input/Day2/Input.txt";
         public static void One()
         {
-
-            String input;
             int forward = 0;
             int depth = 0;
-
-            while ((input = Console.ReadLine()) != "")
+            foreach (var input in File.ReadAllLines(path))
             {
+
                 int number = int.Parse(input.Split(" ")[1]);
                 if (input.Contains("forward"))
                     forward += number;
@@ -26,17 +24,15 @@ namespace AdventOfCode2021
                 else
                     depth -= number;
             }
-
             Console.WriteLine(depth * forward);
         }
 
         public static void Two()
         {
-            String input;
             int forward = 0;
             int depth = 0;
             int aim = 0;
-            while ((input = Console.ReadLine()) != "")
+            foreach (var input in File.ReadAllLines(path))
             {
                 int number = int.Parse(input.Split(" ")[1]);
                 if (input.Contains("forward"))
@@ -49,7 +45,6 @@ namespace AdventOfCode2021
                 else
                     aim -= number;
             }
-
             Console.WriteLine(depth * forward);
         }
     }

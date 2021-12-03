@@ -8,16 +8,11 @@ namespace AdventOfCode2021
 {
     internal class Day3
     {
+        private static string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent + "/Input/Day3/Input.txt";
         public static void One()
         {
             String input;
-            List<string> binary = new();
-
-            while ((input = Console.ReadLine()) != "")
-            {
-                binary.Add(input);
-            }
-
+            var binary = File.ReadAllLines(path).ToList();
             string mostFrequent = "";
             string leastFrequent = "";
             for (int i = 0; i < binary[0].Length; i++)
@@ -37,13 +32,7 @@ namespace AdventOfCode2021
         public static void Two()
         {
             String input;
-            List<string> binary = new();
-
-            while ((input = Console.ReadLine()) != "")
-            {
-                binary.Add(input);
-            }
-
+            var binary = File.ReadAllLines(path).ToList();
             List<string> oxygenGngRating = new(binary);
             List<string> co2ScrabberRating = new(binary);
 

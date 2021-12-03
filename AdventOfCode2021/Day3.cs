@@ -11,7 +11,7 @@ namespace AdventOfCode2021
         public static void One()
         {
             String input;
-            List<string> binary = new List<string>();
+            List<string> binary = new();
 
             while ((input = Console.ReadLine()) != "")
             {
@@ -22,7 +22,7 @@ namespace AdventOfCode2021
             string leastFrequent = "";
             for (int i = 0; i < binary[0].Length; i++)
             {
-                List<int> numbers = new List<int>();
+                List<int> numbers = new();
                 for (int j = 0; j < binary.Count; j++)
                 {
                     numbers.Add(int.Parse(binary[j][i].ToString()));
@@ -37,7 +37,7 @@ namespace AdventOfCode2021
         public static void Two()
         {
             String input;
-            List<string> binary = new List<string>();
+            List<string> binary = new();
 
             while ((input = Console.ReadLine()) != "")
             {
@@ -51,7 +51,7 @@ namespace AdventOfCode2021
             {
                 string mostFrequent = "";
                 string leastFrequent = "";
-                List<int> numbers = new List<int>();
+                List<int> numbers = new();
 
 
                 for (int j = 0; j < co2ScrabberRating.Count; j++)

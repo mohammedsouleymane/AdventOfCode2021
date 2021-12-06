@@ -10,7 +10,5 @@ Day3.Two();
 Day4.One();
 Day4.Two();
 Day5.One();
-
-Dictionary<string, int> coordinates = new();
-coordinates.Add("sdfq",7);
-coordinates["test"] = !coordinates.ContainsKey("test") ? 1 : 0;
+Day6.One();
+Day6.Two();

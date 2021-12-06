@@ -37,7 +37,6 @@ namespace AdventOfCode2021
             }
             Console.WriteLine(input.Count);
             long sum = 0;
-            //Console.WriteLine(FishCountAfterNDays(File.ReadAllLines(path)[0], 18));
         }
 
         public static void Two()

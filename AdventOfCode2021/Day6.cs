@@ -36,14 +36,12 @@ namespace AdventOfCode2021
 
             }
             Console.WriteLine(input.Count);
-            long sum = 0;
         }
 
         public static void Two()
         {
 
             var days = 18;
-            // group the fish by their timer, no need to deal with them one by one:
             var input = new long[9];
             foreach (var ch in File.ReadAllLines(path)[0].Split(","))
             {

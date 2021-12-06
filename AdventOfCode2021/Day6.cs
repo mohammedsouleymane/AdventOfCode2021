@@ -36,8 +36,6 @@ namespace AdventOfCode2021
 
             }
             Console.WriteLine(input.Count);
-            var z = File.ReadAllLines(path)[0].Split(",").Select(x => int.Parse(x)).GroupBy(x => x).OrderBy(x => x.Key).ToList();
-
             long sum = 0;
             //Console.WriteLine(FishCountAfterNDays(File.ReadAllLines(path)[0], 18));
         }

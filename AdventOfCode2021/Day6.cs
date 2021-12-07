@@ -52,7 +52,6 @@ namespace AdventOfCode2021
             {
                
                 input[(t + 7) % 9] += input[t % 9];
-                Console.WriteLine(String.Join(",", input));
             }
 
             Console.WriteLine(input.Sum());

@@ -14,3 +14,7 @@ Day6.One();
 Day6.Two();
 Day7.One();
 Day7.Two();
+Day8.One();
+Day8.Two();
+
+

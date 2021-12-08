@@ -25,12 +25,12 @@ namespace AdventOfCode2021
 
         public static void Two()
         {
-            Dictionary<char,char> dic = new();
+            Dictionary<char, char> dic = new();
             string[] numbers = new string[10];
             var input = File.ReadAllLines(path);
-            List<int> outputs = new ();
+            List<int> outputs = new();
             foreach (var item in input)
-            {   
+            {
                 numbers[1] = item.Split(" |")[0].Split(" ").Where(x => x.Length == 2).ToList()[0];
                 numbers[4] = item.Split(" |")[0].Split(" ").Where(x => x.Length == 4).ToList()[0];
                 numbers[7] = item.Split(" |")[0].Split(" ").Where(x => x.Length == 3).ToList()[0];
@@ -38,29 +38,22 @@ namespace AdventOfCode2021
 
                 foreach (var lengthOf6 in item.Split(" |")[0].Split(" ").Where(x => x.Length == 6).ToList())
                 {
-                    if(String.Concat((lengthOf6 + numbers[1]).OrderBy(x => x).Distinct()) == String.Concat(numbers[8].OrderBy(x => x)))
-                    {
+                    if (String.Concat((lengthOf6 + numbers[1]).OrderBy(x => x).Distinct()) == String.Concat(numbers[8].OrderBy(x => x)))
                         numbers[6] = lengthOf6;
-                    }
-                    else if(String.Concat((lengthOf6 + numbers[4]).OrderBy(x => x).Distinct()) == String.Concat(numbers[8].OrderBy(x => x)))
-                    {
+
+                    else if (String.Concat((lengthOf6 + numbers[4]).OrderBy(x => x).Distinct()) == String.Concat(numbers[8].OrderBy(x => x)))
                         numbers[0] = lengthOf6;
-                    }
                     else
-                    {
                         numbers[9] = lengthOf6;
-                    }
+
                 }
                 foreach (var lengthOf5 in item.Split(" |")[0].Split(" ").Where(x => x.Length == 5).ToList())
                 {
                     if (String.Concat((lengthOf5 + numbers[1]).OrderBy(x => x).Distinct()) == String.Concat(numbers[9].OrderBy(x => x)))
-                    {
                         numbers[5] = lengthOf5;
-                    }
-                    else if(String.Concat((lengthOf5 + numbers[1]).OrderBy(x => x).Distinct()).Length == 6)
-                    {
+
+                    else if (String.Concat((lengthOf5 + numbers[1]).OrderBy(x => x).Distinct()).Length == 6)
                         numbers[2] = lengthOf5;
-                    }
                     else
                         numbers[3] = lengthOf5;
                 }
@@ -69,11 +62,8 @@ namespace AdventOfCode2021
                 foreach (var i in item.Split("| ")[1].Split(" "))
                 {
                     output += Array.IndexOf(numbers, String.Concat(i.OrderBy(c => c)));
-                   
                 }
-
                 outputs.Add(int.Parse(output));
-
             }
 
             Console.WriteLine(outputs.Sum());

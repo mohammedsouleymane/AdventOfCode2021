@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace AdventOfCode2021
 {
-    internal class Day2
+    internal class Day02
     {
-        private static string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent + "/Input/Day2/Input.txt";
+        private static string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent + "/Input/Day02/Input.txt";
         public static void One()
         {
             int forward = 0;

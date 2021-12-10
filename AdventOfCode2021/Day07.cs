@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 namespace AdventOfCode2021
 {
     
-    internal class Day7
+    internal class Day07
     {
-        private static string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent + "/Input/Day7/Input.txt";
+        private static string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent + "/Input/Day07/Input.txt";
         public static void One()
         {
             var input = File.ReadAllLines(path)[0].Split(",").Select(x => int.Parse(x));

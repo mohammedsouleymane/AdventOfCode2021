@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace AdventOfCode2021
 {
-    internal class Day3
+    internal class Day03
     {
-        private static string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent + "/Input/Day3/Input.txt";
+        private static string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent + "/Input/Day03/Input.txt";
         public static void One()
         {
             var binary = File.ReadAllLines(path).ToList();

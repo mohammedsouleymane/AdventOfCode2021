@@ -1,8 +1,8 @@
 ﻿namespace AdventOfCode2021
 {
-    internal class Day4
+    internal class Day04
     {
-        private static string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent + "/Input/Day4/Input.txt";
+        private static string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent + "/Input/Day04/Input.txt";
         private static List<int[]> boardsIn1DArr = new();
         private static List<int[,]> boards = new();     
         private static List<string> input = File.ReadAllLines(path).ToList();

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace AdventOfCode2021
 {
-    internal class Day8
+    internal class Day08
 
     {
-        private static string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent + "/Input/Day8/Input.txt";
+        private static string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent + "/Input/Day08/Input.txt";
 
         public static void One()
         {

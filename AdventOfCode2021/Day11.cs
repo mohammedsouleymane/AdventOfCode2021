@@ -45,13 +45,11 @@ namespace AdventOfCode2021
                         {
                             if (matrix[i, j] % 10 == 0 && !set.Contains(j + "," + i))
                             {
-                                CheckFlashes(matrix, i, j);
+                                AdjacentElements(matrix, i, j);
                                 flashes++;
                                 set.Add(j + "," + i);
                                 matrix[i, j] = 0;
                             }
-
-
                         }
                     }
                 }
@@ -97,7 +95,7 @@ namespace AdventOfCode2021
                         {
                             if (matrix[i, j] % 10 == 0 && !set.Contains(j + "," + i))
                             {
-                                CheckFlashes(matrix, i, j);
+                                AdjacentElements(matrix, i, j);
                                 flashes++;
                                 set.Add(j + "," + i);
                                 matrix[i, j] = 0;
@@ -109,55 +107,19 @@ namespace AdventOfCode2021
                 sync = list.GroupBy(x => x).Count() == 1;
 
             }
-
             Console.WriteLine(step);
         }
-        private static void CheckFlashes(int[,] matrix, int y, int x)
+        static void AdjacentElements(int[,] arr, int row, int column)
         {
-            if (y > 0)
-            {
-                if (matrix[y - 1, x] != 10 && matrix[y - 1, x] > 0)
-                    matrix[y - 1, x]++;
-            }
+            int rows = arr.GetLength(0);
+            int columns = arr.GetLength(1);
 
-            if (y < matrix.GetLength(0) - 1)
-            {
-                if (matrix[y + 1, x] != 10 && matrix[y + 1, x] > 0)
-                    matrix[y + 1, x]++;
-            }
-            if (x > 0)
-            {
-                if (matrix[y, x - 1] != 10 && matrix[y, x - 1] > 0)
-                    matrix[y, x - 1]++;
-            }
+            for (int j = row - 1; j <= row + 1; j++)
+                for (int i = column - 1; i <= column + 1; i++)
+                    if (i >= 0 && j >= 0 && i < columns && j < rows && !(j == row && i == column))
+                        if (arr[j, i] != 10 && arr[j, i] > 0)
+                            arr[j, i]++;
 
-            if (x < matrix.GetLength(1) - 1)
-            {
-                if (matrix[y, x + 1] != 10 && matrix[y, x + 1] > 0)
-                    matrix[y, x + 1]++;
-            }
-            if (y < matrix.GetLength(0) - 1 && x < matrix.GetLength(1) - 1)
-            {
-                if (matrix[y + 1, x + 1] != 10 && matrix[y + 1, x + 1] > 0)
-                    matrix[y + 1, x + 1]++;
-            }
-            if (y > 0 && x > 0)
-            {
-                if (matrix[y - 1, x - 1] != 10 && matrix[y - 1, x - 1] > 0)
-                    matrix[y - 1, x - 1]++;
-            }
-
-            if (y < matrix.GetLength(0) - 1 && x > 0)
-            {
-                if (matrix[y + 1, x - 1] != 10 && matrix[y + 1, x - 1] > 0)
-                    matrix[y + 1, x - 1]++;
-            }
-            if (y > 0 && x < matrix.GetLength(1) - 1)
-            {
-                if (matrix[y - 1, x + 1] != 10 && matrix[y - 1, x + 1] > 0)
-                    matrix[y - 1, x + 1]++;
-            }
         }
-
     }
 }

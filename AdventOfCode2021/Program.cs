@@ -22,6 +22,6 @@ Day10.One();
 Day10.Two();
 Day11.One();
 Day11.Two();
-
+Day12.OneAndTwo();
 
 

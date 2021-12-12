@@ -46,14 +46,14 @@ namespace AdventOfCode2021
             {
                 Paths1(item, dic, new Stack<string>());
             }
-            Console.WriteLine(queue.Where(x => x.Count > 1).Count());
+            Console.WriteLine(queue.Count());
             queue = new Queue<Stack<string>>();
             foreach (var item in dic["start"])
             {
-                Paths2(item, dic, new Stack<string>(), false);
+                Paths2(item, dic, new Stack<string>());
             }
 
-            Console.WriteLine(queue.Distinct().Where(x => x.Count > 1).Count());
+            Console.WriteLine(queue.Count());
         }
 
         static Queue<Stack<string>> queue = new Queue<Stack<string>>();
@@ -69,18 +69,13 @@ namespace AdventOfCode2021
 
             foreach (var item in dic[cave])
             {
-
                 if (item != "end" && (!path.Contains(item) || char.IsUpper(item[0])))
-                {
                     Paths1(item, dic, new Stack<string>(path));
-                }
             }
         }
 
-        private static void Paths2(string cave, Dictionary<string, List<string>> dic, Stack<string> path, bool alreadyHasDouble)
+        private static void Paths2(string cave, Dictionary<string, List<string>> dic, Stack<string> path)
         {
-
-            
             path.Push(cave);
             var num = 0;
             try { num = path.Where(x => char.IsLower(x[0])).GroupBy(x => x).Max(x => x.Count()); }
@@ -90,18 +85,12 @@ namespace AdventOfCode2021
                 path.Push("end");
                 queue.Enqueue(new Stack<string>(path));
                 path.Pop();
-
             }
-
 
             foreach (var item in dic[cave])
             {
-
                 if (item != "end" && (num != 2 || !path.Contains(item) || char.IsUpper(item[0])))
-                {
-                    Paths2(item, dic, new Stack<string>(path), num == 2);
-                }
-
+                    Paths2(item, dic, new Stack<string>(path));
             }
 
         }

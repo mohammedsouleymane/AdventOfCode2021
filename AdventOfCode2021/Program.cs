@@ -27,6 +27,8 @@ using AdventOfCode2021;
 Day14.One();
 Day14.Two();
 
+Day15.One();
+
 
 
 

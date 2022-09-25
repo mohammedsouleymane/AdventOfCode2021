@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,7 +19,7 @@ namespace AdventOfCode2021
         
 
             (int x, int y) coordinate = (0, 0);
-            foreach (var c in GetNeighbors((0, 0), matrix))
+            foreach (var c in CollectionsMarshal.AsSpan(GetNeighbors((0, 0), matrix)))
             {
                 costs.Add((matrix[c.x, c.y], c.x, c.y));
             }

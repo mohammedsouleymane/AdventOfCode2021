@@ -24,10 +24,10 @@ using AdventOfCode2021;
 //Day11.Two();
 //Day12.OneAndTwo();
 //Day13.OneAndTwo();
-Day14.One();
-Day14.Two();
-
+//Day14.One();
+//Day14.Two();
 Day15.One();
+//Day16.One();
 
 
 
